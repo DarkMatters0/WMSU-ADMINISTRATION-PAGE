@@ -1,3 +1,4 @@
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +8,94 @@
 
 
 
-/* Divider Section */
+
+/* ======== Hero Section ======== */
+.hero {
+    background: 
+        linear-gradient(rgba(124, 9, 2, 0.85), rgba(124, 9, 2, 0.85)),
+        url('../images/admin-building.jpg') center/cover no-repeat;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.hero h1, .hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hero-title-main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.5);
+    position: relative;
+    width: 100%;
+}
+
+.hero-title-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    color: white;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(255, 255, 255, 0.4);
+    position: relative;
+    width: 100%;
+}
+
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    padding: 10px 25px;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #7C0902;
+}
+
+
+/* ======== Divider Section ======== */
 .divider {
     display: flex;
     align-items: center;
@@ -40,7 +128,9 @@
 
 .divider-line {
     height: 3px;
-    width: 400px;
+    width: 30%;
+    max-width: 400px;
+    min-width: 80px;
     background: #7C0902;
     box-shadow: 0 2px 8px rgba(124, 9, 2, 0.3);
     position: relative;
@@ -68,9 +158,9 @@
 
 .divider-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     font-weight: 800;
-    margin: 0 25px;
+    margin: 0 15px;
     text-transform: uppercase;
     color: #7C0902;
     text-shadow: 
@@ -79,6 +169,7 @@
     letter-spacing: 1px;
     padding: 0 15px;
     position: relative;
+    text-align: center;
 }
 
 .divid-ad {
@@ -133,6 +224,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* Board of Regents Section */
+
 .board-section {
     background-color: #fff;
     padding: 40px 20px;
@@ -141,6 +233,7 @@
 .board-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .board-title {
@@ -148,7 +241,7 @@
     text-align: center;
     color: #7C0902;
     margin-bottom: 30px;
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 2.5vw, 1.5rem);
     font-weight: 700;
 }
 
@@ -156,7 +249,7 @@
     font-family: 'Montserrat', sans-serif;
     color: #666;
     text-align: justify;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     line-height: 1.7;
     margin-bottom: 40px;
     font-weight: 500;
@@ -173,7 +266,7 @@
     font-weight: bold;
 }
 
-/* Board Members Grid */
+/* ======== Board Members Grid - RESTORED TO ORIGINAL ======== */
 .members-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -257,7 +350,7 @@
     color: #7C0902;
 }
 
-/* Modal Container */
+/* ======== Modal Container - RESTORED TO ORIGINAL ======== */
 .modal-container {
     position: fixed;
     top: 50%;
@@ -267,9 +360,9 @@
     max-width: 1000px;
     max-height: 90vh;
     border-radius: 20px;
-    overflow: hidden; /* Changed from overflow-y: auto */
+    overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    background-color: #890909; /* Darker maroon background to match image */
+    background-color: #890909;
     color: white;
     z-index: 1000;
     opacity: 0;
@@ -283,9 +376,9 @@
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* Modal Header - Updated to match the gray top bar */
+/* Modal Header */
 .modal-header {
-    background-color: #d8d8d8; /* Lighter gray to match image */
+    background-color: #d8d8d8;
     padding: 15px;
     text-align: right;
 }
@@ -310,14 +403,14 @@
     display: flex;
     padding: 30px;
     flex-wrap: nowrap;
-    background-color: #890909; /* Match background color */
+    background-color: #890909;
 }
 
 /* Profile Image */
 .profile-image {
     flex: 0 0 auto;
     margin-right: 30px;
-    max-height: 450px; /* More specific height to match image */
+    max-height: 450px;
     max-width: 350px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -343,7 +436,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Changed from center to match image */
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 15px;
     text-align: left;
@@ -360,7 +453,7 @@
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     text-align: left;
-    text-transform: uppercase; /* Added to match the image */
+    text-transform: uppercase;
     font-weight: bold;
 }
 
@@ -369,7 +462,7 @@
     font-weight: normal;
     margin-bottom: 20px;
     text-align: left;
-    text-transform: uppercase; /* Added to match the image */
+    text-transform: uppercase;
 }
 
 .profile-info p {
@@ -390,7 +483,7 @@
 .representation h3 {
     margin-right: 20px;
     font-size: 22px;
-    text-transform: uppercase; /* Added to match the image */
+    text-transform: uppercase;
 }
 
 .representative-image {
@@ -401,7 +494,7 @@
     margin-left: auto;
 }
 
-/* Additional styles to match the exact layout shown in the image */
+/* Add responsive styles without changing the original structure */
 @media (max-width: 768px) {
     .modal-content {
         flex-direction: column;
@@ -411,5 +504,57 @@
         margin-right: 0;
         margin-bottom: 20px;
         max-width: 100%;
+    }
+    
+    .representation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .representative-image {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .hero {
+        min-height: 300px;
+        padding: 40px 15px;
+    }
+    
+    .hero-title-main {
+        letter-spacing: 0.15em;
+    }
+    
+    .hero-title-sub {
+        letter-spacing: 0.15em;
+    }
+    
+    .divider {
+        flex-direction: column;
+    }
+    
+    .divider-line {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 480px) {
+    .profile-info h1 {
+        font-size: 28px;
+    }
+    
+    .profile-info h2 {
+        font-size: 14px;
+    }
+    
+    .representation h3 {
+        font-size: 18px;
+    }
+    
+    .representative-image {
+        width: 100px;
+        height: 100px;
     }
 }

@@ -34,13 +34,13 @@ function renderStaffRows($staffList) {
             </h1>
             <p>The WMSU Administration page offers a comprehensive look into the <strong>individuals who lead and shape Western Mindanao State University</strong>. Here, you will find the <strong>Board of Regents, university officials</strong>, and key representatives whose leadership, dedication, and vision continue to drive the university toward <strong>academic excellence, innovation, and inclusive growth</strong>.</p>
             <p>This section highlights the people behind WMSU's progress — the decision-makers and advocates who work tirelessly to uphold its mission and empower its community.</p>
-            <a href="#" class="btn">Learn More</a>
+            <a href="#org-chart" class="btn">Learn More</a>
     </div>
 </section>
 
 <!-- Organizational Chart Section -->
 <div style="height: 40px;"></div>
-<h2 style="text-align:center; color:#7C0902; font-weight:800; margin-bottom: 20px;">WMSU Organizational Chart</h2>
+<h2 id="org-chart" style="text-align:center; color:#7C0902; font-weight:800; margin-bottom: 20px;">WMSU Organizational Chart</h2>
 <div class="org-chart">
     <ul class="tree">
         <li>Board of Regents

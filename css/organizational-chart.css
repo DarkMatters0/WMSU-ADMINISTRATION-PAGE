@@ -4,11 +4,15 @@ body {
     background: white;
     margin: 0;
 }
+
 h1 {
     text-align: center;
     margin-bottom: 40px;
     color: #7C0902;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
+
+/* Org Chart Container */
 .org-chart {
     display: flex;
     justify-content: center;
@@ -19,20 +23,24 @@ h1 {
     transform: scale(0.85);
     background-color: white;
 }
+
 @media (max-width: 1200px) {
     .org-chart {
         transform: scale(0.75);
     }
 }
+
 @media (max-width: 900px) {
     .org-chart {
         transform: scale(0.65);
     }
 }
+
 .tree {
     display: table;
     margin: 0 auto;
 }
+
 .tree ul {
     padding-top: 20px;
     position: relative;
@@ -40,6 +48,7 @@ h1 {
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
 }
+
 .tree li {
     text-align: center;
     list-style-type: none;
@@ -51,6 +60,7 @@ h1 {
     float: left;
     display: table-cell;
 }
+
 /* Connection lines */
 .tree li::before, .tree li::after {
     content: '';
@@ -61,28 +71,35 @@ h1 {
     width: 50%;
     height: 20px;
 }
+
 .tree li::after {
     right: auto;
     left: 50%;
     border-left: 2px solid #ccc;
 }
+
 /* Remove connection lines for first child and last child */
 .tree li:only-child::after, .tree li:only-child::before {
     display: none;
 }
+
 .tree li:only-child {
     padding-top: 0;
 }
+
 .tree li:first-child::before, .tree li:last-child::after {
     border: 0 none;
 }
+
 .tree li:last-child::before {
     border-right: 2px solid #ccc;
     border-radius: 0 5px 0 0;
 }
+
 .tree li:first-child::after {
     border-radius: 5px 0 0 0;
 }
+
 /* Downward connector from parent */
 .tree ul ul::before {
     content: '';
@@ -93,6 +110,7 @@ h1 {
     width: 0;
     height: 20px;
 }
+
 /* Node styling */
 .tree li div {
     border: 2px solid #7C0902;
@@ -114,51 +132,56 @@ h1 {
     word-wrap: break-word;
     box-sizing: border-box;
 }
+
 /* Hover effect */
 .tree li div:hover {
     background: #f5f5f5;
     border-color: #a33a3a;
 }
-/* Level-specific colors - keeping the same structure but with new colors */
+
+/* Level-specific colors */
 .tree li.level-1 > div {
     background: white;
     color: #7C0902;
     border: 2px solid #7C0902;
 }
+
 .tree li.level-2 > div {
     background: white;
     color: #7C0902;
     border: 2px solid #7C0902;
 }
+
 .tree li.level-3 > div {
     background: white;
     color: #7C0902;
     border: 2px solid #7C0902;
 }
+
 .tree li.level-4 > div {
     background: white;
     color: #7C0902;
     border: 2px solid #7C0902;
 }
+
 .tree li.level-5 > div {
     background: white;
     color: #7C0902;
     border: 2px solid #7C0902;
 }
 
-/* Modal Container */
+/* Modal Container - RESTORED TO ORIGINAL */
 .modal-container {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    width: 90%;
-    max-width: 1000px;
-    max-height: 90vh;
-    border-radius: 20px;
-    overflow: hidden; /* Changed from overflow-y: auto */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    background-color: #890909; /* Darker maroon background to match image */
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 95%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #890909;
     color: white;
     z-index: 1000;
     opacity: 0;
@@ -169,13 +192,13 @@ h1 {
 .modal-container.show {
     opacity: 1;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%);
 }
 
-/* Modal Header - Updated to match the gray top bar */
+/* Modal Header */
 .modal-header {
-    background-color: #d8d8d8; /* Lighter gray to match image */
-    padding: 15px;
+    background-color: #e0e0e0;
+    padding: 20px;
     text-align: right;
 }
 
@@ -197,75 +220,46 @@ h1 {
 /* Modal Content */
 .modal-content {
     display: flex;
+    background-color: #890909;
+    color: white;
     padding: 30px;
-    flex-wrap: nowrap;
-    background-color: #890909; /* Match background color */
 }
 
 /* Profile Image */
 .profile-image {
-    flex: 0 0 auto;
+    flex: 0 0 250px;
     margin-right: 30px;
-    max-height: 450px; /* More specific height to match image */
-    max-width: 350px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .profile-image img {
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
+    width: 100%;
     border-radius: 10px;
-    display: block;
-    margin: 0;
-    box-shadow: none;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Profile Info */
 .profile-info {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Changed from center to match image */
-    align-items: flex-start;
-    gap: 15px;
-    text-align: left;
-}
-
-.profile-info h1, .profile-info h2, .profile-info p {
-    margin: 0;
-    width: 100%;
 }
 
 .profile-info h1 {
     font-size: 36px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     text-align: left;
-    text-transform: uppercase; /* Added to match the image */
-    font-weight: bold;
+    color: white;
 }
 
 .profile-info h2 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     margin-bottom: 20px;
-    text-align: left;
-    text-transform: uppercase; /* Added to match the image */
 }
 
 .profile-info p {
     line-height: 1.6;
     margin-bottom: 20px;
-    text-align: left;
-    font-size: 15px;
 }
 
 /* Representation Section */
@@ -273,13 +267,11 @@ h1 {
     display: flex;
     align-items: center;
     margin-top: 20px;
-    width: 100%;
 }
 
 .representation h3 {
     margin-right: 20px;
     font-size: 22px;
-    text-transform: uppercase; /* Added to match the image */
 }
 
 .representative-image {
@@ -290,15 +282,79 @@ h1 {
     margin-left: auto;
 }
 
-/* Additional styles to match the exact layout shown in the image */
+/* Add responsive styles without changing the original structure */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+    }
+    
+    .org-chart {
+        padding: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
     .modal-content {
         flex-direction: column;
     }
     
     .profile-image {
+        flex: 0 0 auto;
         margin-right: 0;
         margin-bottom: 20px;
-        max-width: 100%;
+        max-width: 200px;
+    }
+    
+    .representation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .representative-image {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 480px) {
+    .org-chart {
+        transform: scale(0.55);
+    }
+    
+    .profile-info h1 {
+        font-size: 28px;
+    }
+    
+    .profile-info h2 {
+        font-size: 16px;
+    }
+    
+    .representation h3 {
+        font-size: 18px;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+    
+    .close-button {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+
+/* For better horizontal scrolling on mobile */
+@media (max-width: 768px) {
+    .tree {
+        min-width: min-content;
     }
 }

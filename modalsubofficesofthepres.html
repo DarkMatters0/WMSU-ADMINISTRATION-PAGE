@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suboffices Modal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-container {
+            width: 90%;
+            max-width: 800px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            background-color: #e6e6e6;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            color: #8B0000;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .close-button {
+            background-color: transparent;
+            border: 2px solid #8B0000;
+            color: #8B0000;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .modal-content {
+            background-color: #8B0000;
+            color: white;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px 20px;
+        }
+        
+        .content-item {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .content-link {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2 class="modal-title">SUBOFFICES OF THE OFFICE OF THE PRESIDENT:</h2>
+            <div class="close-button">✕</div>
+        </div>
+        <div class="modal-content">
+            <div class="content-item">LOREM IPSUM</div>
+            <a href="#" class="content-link">LOREM IPSUM LINK</a>
+            
+            <div class="content-item">LOREM IPSUM</div>
+            <a href="#" class="content-link">LOREM IPSUM LINK</a>
+            
+            <div class="content-item">LOREM IPSUM</div>
+            <a href="#" class="content-link">LOREM IPSUM LINK</a>
+            
+            <div class="content-item">LOREM IPSUM</div>
+            <a href="#" class="content-link">LOREM IPSUM LINK</a>
+            
+            <div class="content-item">LOREM IPSUM</div>
+            <a href="#" class="content-link">LOREM IPSUM LINK</a>
+        </div>
+    </div>
+</body>
+</html>

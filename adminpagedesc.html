@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WMSU Admin - Page Descriptions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #ffcdd2;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: #d50000;
+      color: white;
+      padding: 15px;
+    }
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+    }
+    
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    
+    .navigation {
+      padding: 20px;
+    }
+    
+    .back-button {
+      width: 50px;
+      height: 50px;
+      background-color: #8b1014;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .back-arrow {
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    
+    .instruction {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-left: 60px;
+    }
+    
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .menu-item {
+      background: linear-gradient(to bottom, #8b1014, #500a0c);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .menu-item:hover {
+      background: linear-gradient(to bottom, #a01216, #8b1014);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .menu-item:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="/api/placeholder/80/80" alt="WMSU Logo" class="logo">
+    <div class="title">WMSU ADMIN - Page Descriptions</div>
+  </div>
+  
+  <div class="navigation">
+    <a href="#" class="back-button">
+      <div class="back-arrow">←</div>
+    </a>
+    
+    <div class="instruction">SELECT FROM BELOW:</div>
+    
+    <div class="menu">
+      <div class="menu-item">BOARD OF REGENTS</div>
+      <div class="menu-item">ADMINISTRATIVE OFFICIALS</div>
+      <div class="menu-item">ACADEMIC DEANS</div>
+    </div>
+  </div>
+</body>
+</html>
