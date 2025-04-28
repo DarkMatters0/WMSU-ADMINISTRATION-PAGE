@@ -9,8 +9,6 @@
         <?php require_once '../vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css'; ?>
         <?php require_once '../vendor/datatable-2.1.8/datatables.min.css'; ?>
         <?php require_once '../css/navbar.css'; ?>
-        <?php require_once '../css/homepage.css'; ?>
-        <?php require_once '../css/home.css'; ?>
         <?php require_once '../css/fonts.css'; ?>
         <?php require_once '../css/linkages.css'; ?>
         <?php require_once '../css/administration.css'?>

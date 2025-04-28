@@ -8,40 +8,45 @@ class OpStaff {
     {
         $this->db = new Database();
     }
+// Fetch all operational staff
+function fetchAll()
+{
+    $sql = "
+        SELECT 
+            o.id,
+            o.name,
+            o.title_id,
+            dop.designation AS title,
+            o.page_link,
+            h.short AS honorific_short
+        FROM opstaff AS o
+        LEFT JOIN honorifics AS h ON o.honorifics_id = h.id
+        LEFT JOIN designation_opstaff AS dop ON o.title_id = dop.id
+    ";
+    
+    // Prepare the query
+    $query = $this->db->connect()->prepare($sql);
 
-        // Fetch all products
-        function fetchAll()
-        {
-            $sql = "
-                SELECT 
-                    o.*, 
-                    h.short AS honorific_short
-                FROM opstaff AS o
-                LEFT JOIN honorifics AS h ON o.honorifics_id = h.id
-            ";
-        
-            // Prepare the query
-            $query = $this->db->connect()->prepare($sql);
-        
-            // Execute the query and fetch data
-            $data = null;
-            if ($query->execute()) {
-                $data = $query->fetchAll(PDO::FETCH_ASSOC);
-            }
-        
-            // Return the data
-            return $data;
-        }
+    // Execute the query and fetch data
+    $data = null;
+    if ($query->execute()) {
+        $data = $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Return the data
+    return $data;
+}
+
         
 
-    function add_official($name, $title, $page_link, $honorifics_id)
+    function add_official($name, $designation_opstaff, $page_link, $honorifics_id)
     {
         try {
-            $sql = "INSERT INTO opstaff (name, title, page_link, honorifics_id) VALUES (:name, :title, :page_link, :honorifics_id)";
+            $sql = "INSERT INTO opstaff (name, title_id, page_link, honorifics_id) VALUES (:name, :title_id, :page_link, :honorifics_id)";
             $query = $this->db->connect()->prepare($sql);
             
             $query->bindParam(':name', $name);
-            $query->bindParam(':title', $title);
+            $query->bindParam(':title_id', $designation_opstaff);
             $query->bindParam(':page_link', $page_link);
             $query->bindParam(':honorifics_id', $honorifics_id);
             
@@ -79,10 +84,10 @@ class OpStaff {
 
 function edit()
 {
-    $sql = "UPDATE opstaff SET name = :name, title = :title, page_link = :page_link, honorifics_id = :honorifics_id WHERE id = :id;";
+    $sql = "UPDATE opstaff SET name = :name, title_id = :title_id, page_link = :page_link, honorifics_id = :honorifics_id WHERE id = :id;";
     $query = $this->db->connect()->prepare($sql);
     $query->bindParam(':name', $this->name);
-    $query->bindParam(':title', $this->title);
+    $query->bindParam(':title_id', $this->designation_opstaff);
     $query->bindParam(':page_link', $this->page_link);
     $query->bindParam(':honorifics_id', $this->honorifics);
     $query->bindParam(':id', $this->id);

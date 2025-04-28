@@ -1,19 +1,21 @@
 <?php
 require_once '../../classes/Vicepres.class.php';
 require_once '../../classes/honorifics.class.php';
+require_once '../../classes/designation_vp.class.php';
 
 $honorificsObj = new Honorifics();
+$designation_vpObj = new DesignationVp();
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
-    $title = $_POST['title'];
+    $designation_vp = $_POST['designation_vp'];
     $page_link = $_POST['page_link'];
     $honorifics_id = $_POST['honorifics']; // Get the selected honorifics ID
 
     $vicepresobj = new VicePres();
 
     // Assuming `add_official()` accepts name and title as parameters
-    if ($vicepresobj->add_official($name, $title, $page_link, $honorifics_id)) {
+    if ($vicepresobj->add_official($name, $designation_vp, $page_link, $honorifics_id)) {
         echo "Official added successfully!";
         header('Location: ../../sample-admin/administration');
     } else {
@@ -45,7 +47,7 @@ if (isset($_POST['submit'])) {
             </div>
 
             <div class="form-group">
-    <label for="honorifics">Designation</label>
+    <label for="honorifics">Honorifics</label>
     <select name="honorifics" id="honorifics" required>
         <option value="">Select a designation</option>
         <?php
@@ -59,10 +61,21 @@ if (isset($_POST['submit'])) {
     </select>
 </div>
 
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" required>
-            </div>
+<div class="form-group">
+    <label for="designation_vp">Designation</label>
+    <select name="designation_vp" id="designation_vp" required>
+        <option value="">Select a designation</option>
+        <?php
+            $designation = $designation_vpObj->fetchdesignation_vp();
+            foreach ($designation as $designation_vp){
+        ?>
+            <option value="<?= $designation_vp['id'] ?>"><?= htmlspecialchars($designation_vp['designation']) ?></option>
+        <?php
+            }
+        ?>
+    </select>
+</div>
+
 
             <div class="form-group">
                 <label for="page_link">Page Link</label>
